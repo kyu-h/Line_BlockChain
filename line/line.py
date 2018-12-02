@@ -1,13 +1,19 @@
 from iconservice import *
+import time
 import json, os
 
 TAG = 'LineToken'
 
 filename = '/home/kyu/work/call-hello.json'
 
+f_txt = open('/home/kyu/work/line/hash.txt', 'r')
+txt_data = f_txt.read()
+print(txt_data)
+f_txt.close()
+
 with open(filename, 'r') as f :
     data = json.load(f)
-    data['params']['data']['params']['hash'] = '0x0000'
+    data['params']['data']['params']['hash' + str(time.time())] = txt_data
 
 os.remove(filename)
 with open(filename, 'w') as f:
@@ -27,5 +33,4 @@ class LineToken(IconScoreBase):
     @external(readonly=True)
     def hello(self, _to: str, hash: str) -> str:
         Logger.debug(f'Hello, world!', TAG)
-        return "Hello, " + _to + "\n" + "hash: " + hash
-
+        return "You got it!"

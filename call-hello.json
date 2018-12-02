@@ -2,13 +2,14 @@
     "jsonrpc": "2.0",
     "method": "icx_call",
     "params": {
-        "to": "cx1661634eb09be91bdb10ebe58b817b68e4be1f2a",
+        "to": "cxaa783958cde71fab4637cb1d6789a605466dd78b",
         "dataType": "call",
         "data": {
             "method": "hello",
             "params": {
                 "_to": "Line",
-                "hash": "0x0000"
+                "hash": "97610593d544f70755f452ff1a6d46413bba9aae93f36f442e274209024a4e0f\n",
+                "hash1543747183.056796": "57bdaeac061150a489d3cea899ff3d7396598d86cdb06d9a5a7ae4c3c728ea22\n"
             }
         }
     },

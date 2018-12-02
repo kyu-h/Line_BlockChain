@@ -271,3 +271,57 @@ Traceback (most recent call last):
   File "./.score/0122b20abf46f1cbd6771174650610b15f946e08d5/0xbbd3be3a0279c96ec218209c2a2c6e98452d9c17eff2059ffa7bcc1045ddc16f/line.py", line 8, in <module>
     with open(filename, 'r') as f :
 FileNotFoundError: [Errno 2] No such file or directory: '/home/kyu/work/line/call-hello.json'
+[ERROR|logger.py:360] 2018-12-02 19:32:12,659 > [IconService] name 'r' is not defined
+Traceback (most recent call last):
+  File "/home/kyu/.local/lib/python3.6/site-packages/iconservice/icon_service_engine.py", line 616, in _handle_icx_send_transaction
+    tx_result.score_address = self._handle_score_invoke(context, to, params)
+  File "/home/kyu/.local/lib/python3.6/site-packages/iconservice/icon_service_engine.py", line 788, in _handle_score_invoke
+    data=data)
+  File "/home/kyu/.local/lib/python3.6/site-packages/iconservice/deploy/icon_score_deploy_engine.py", line 100, in invoke
+    raise e
+  File "/home/kyu/.local/lib/python3.6/site-packages/iconservice/deploy/icon_score_deploy_engine.py", line 97, in invoke
+    self.deploy(context, context.tx.hash)
+  File "/home/kyu/.local/lib/python3.6/site-packages/iconservice/deploy/icon_score_deploy_engine.py", line 130, in deploy
+    self._score_deploy(context, tx_params)
+  File "/home/kyu/.local/lib/python3.6/site-packages/iconservice/deploy/icon_score_deploy_engine.py", line 156, in _score_deploy
+    self._on_deploy(context, tx_params)
+  File "/home/kyu/.local/lib/python3.6/site-packages/iconservice/deploy/icon_score_deploy_engine.py", line 302, in _on_deploy
+    raise e
+  File "/home/kyu/.local/lib/python3.6/site-packages/iconservice/deploy/icon_score_deploy_engine.py", line 283, in _on_deploy
+    score = context.new_icon_score_mapper.load_score(score_address, next_tx_hash)
+  File "/home/kyu/.local/lib/python3.6/site-packages/iconservice/iconscore/icon_score_mapper.py", line 127, in load_score
+    score_wrapper = self._load_score_wrapper(address, tx_hash)
+  File "/home/kyu/.local/lib/python3.6/site-packages/iconservice/iconscore/icon_score_mapper.py", line 157, in _load_score_wrapper
+    score_wrapper = self.icon_score_loader.load_score(score_path)
+  File "/home/kyu/.local/lib/python3.6/site-packages/iconservice/iconscore/icon_score_loader.py", line 64, in load_score
+    mod = importlib.import_module(f".{score_package_info[self._MAIN_FILE]}", pkg_root_import)
+  File "/usr/lib/python3.6/importlib/__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 994, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 955, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 665, in _load_unlocked
+  File "<frozen importlib._bootstrap_external>", line 678, in exec_module
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "./.score/018e8168c965eabaa5614c90ff834d6b18f90827c5/0x255fe8e4d26dbce29affd3f6e957681939dbecab70504ea78fdfa4684ea3e352/line.py", line 8, in <module>
+    f_txt = open('/home/kyu/work/line/hash.txt', r)
+NameError: name 'r' is not defined
+[ERROR|logger.py:360] 2018-12-02 19:40:27,821 > [IconService] hello() got an unexpected keyword argument 'hash1543747183.056796'
+Traceback (most recent call last):
+  File "/home/kyu/.local/lib/python3.6/site-packages/iconservice/icon_inner_service.py", line 140, in _query
+    params=converted_request['params'])
+  File "/home/kyu/.local/lib/python3.6/site-packages/iconservice/icon_service_engine.py", line 471, in query
+    ret = self._call(context, method, params)
+  File "/home/kyu/.local/lib/python3.6/site-packages/iconservice/icon_service_engine.py", line 539, in _call
+    ret_val = handler(context, params)
+  File "/home/kyu/.local/lib/python3.6/site-packages/iconservice/icon_service_engine.py", line 583, in _handle_icx_call
+    data)
+  File "/home/kyu/.local/lib/python3.6/site-packages/iconservice/iconscore/icon_score_engine.py", line 97, in query
+    return self._call(context, icon_score_address, data)
+  File "/home/kyu/.local/lib/python3.6/site-packages/iconservice/iconscore/icon_score_engine.py", line 136, in _call
+    return external_func(func_name=func_name, arg_params=[], kw_params=converted_params)
+  File "/home/kyu/.local/lib/python3.6/site-packages/iconservice/iconscore/icon_score_base.py", line 397, in __external_call
+    ret = score_func(*arg_params, **kw_params)
+  File "/home/kyu/.local/lib/python3.6/site-packages/iconservice/iconscore/icon_score_base.py", line 245, in __wrapper
+    res = func(calling_obj, *args, **kwargs)
+TypeError: hello() got an unexpected keyword argument 'hash1543747183.056796'
